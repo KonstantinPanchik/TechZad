@@ -1,6 +1,6 @@
-package com.example.TehZad.projeckt.dto;
+package com.example.TehZad.task.dto;
 
-import com.example.TehZad.projeckt.model.Task;
+import com.example.TehZad.task.model.Task;
 import com.example.TehZad.user.dto.UserMapper;
 
 public class TaskMapper {

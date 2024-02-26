@@ -1,5 +1,6 @@
 package com.example.TehZad.user.dto;
 
+import com.example.TehZad.user.model.Role;
 import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -15,7 +16,7 @@ public class UserCreationDto {
     @NotBlank
     private String confirmPassword;
     @NotNull
-    private Boolean isAdmin;
+    private Role role;
 
 
     @AssertTrue

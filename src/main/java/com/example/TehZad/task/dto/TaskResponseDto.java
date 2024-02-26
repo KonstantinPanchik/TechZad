@@ -1,7 +1,7 @@
-package com.example.TehZad.projeckt.dto;
+package com.example.TehZad.task.dto;
 
-import com.example.TehZad.projeckt.model.Status;
-import com.example.TehZad.projeckt.model.TaskType;
+import com.example.TehZad.task.model.Status;
+import com.example.TehZad.task.model.TaskType;
 import com.example.TehZad.user.dto.UserResponseDto;
 import lombok.Builder;
 import lombok.Data;
