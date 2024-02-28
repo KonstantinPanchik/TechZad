@@ -1,6 +1,7 @@
-package com.example.TehZad.projeckt.dto;
+package com.example.TehZad.project.dto;
 
-import com.example.TehZad.projeckt.model.Status;
+import com.example.TehZad.task.dto.TaskResponseDto;
+import com.example.TehZad.task.model.Status;
 import com.example.TehZad.user.dto.UserResponseDto;
 import lombok.Builder;
 import lombok.Data;
@@ -23,9 +24,9 @@ public class ProjectResponseDto {
 
     LocalDate statusChanged;
 
-
     private UserResponseDto creator;
 
+    private List<ProjectResponseDto> children;
 
     private List<TaskResponseDto> tasks;
 

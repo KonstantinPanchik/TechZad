@@ -1,12 +1,13 @@
-package com.example.TehZad.projeckt.dto;
+package com.example.TehZad.project.dto;
 
-import com.example.TehZad.projeckt.model.Project;
+import com.example.TehZad.task.dto.TaskMapper;
+import com.example.TehZad.project.model.Project;
 import com.example.TehZad.user.dto.UserMapper;
 
 public class ProjectMapper {
 
 
-    public static Project updateFromDto(Project project, ProjectUpdatingDto dto) {
+    public static Project updateFromDto(Project project, ProjectDto dto) {
         if (dto.getName() != null) {
             project.setName(dto.getName());
         }
@@ -20,7 +21,7 @@ public class ProjectMapper {
     }
 
     public static ProjectResponseDto toDto(Project project) {
-        return ProjectResponseDto.builder()
+        ProjectResponseDto dto = ProjectResponseDto.builder()
                 .id(project.getId())
                 .name(project.getName())
                 .description(project.getDescription())
@@ -28,8 +29,17 @@ public class ProjectMapper {
                 .statusChanged(project.getStatusChanged())
                 .created(project.getCreated())
                 .creator(UserMapper.toDto(project.getCreator()))
+                .children(project.getChildProjects().stream().map(ProjectMapper::toDto).toList())
                 .tasks(project.getTasks().stream().map(TaskMapper::toResponseDto).toList())
                 .build();
+        return dto;
+    }
+
+    public static Project from(ProjectDto dto) {
+        Project project = new Project();
+        project.setName(dto.getName());
+        project.setDescription(dto.getDescription());
+        return project;
     }
 }
 

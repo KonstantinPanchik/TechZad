@@ -1,4 +1,4 @@
-package com.example.TehZad.projeckt.model;
+package com.example.TehZad.task.model;
 
 import java.util.Optional;
 
