@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.hibernate.annotations.BatchSize;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -50,6 +51,7 @@ public class Project {
     private Project parent;
 
     @OneToMany(mappedBy = "parent", fetch = FetchType.EAGER) //древовидная структура проекта
+    @BatchSize(size = 100)
     private List<Project> childProjects = new ArrayList<>();
 
     public Project() {
